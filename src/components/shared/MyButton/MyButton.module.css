@@ -1,0 +1,28 @@
+.myButton{
+    border: 1px solid ;
+    width: 150px;
+    height: 50px;
+    color: #efe0c9;
+    font-size: 20px;
+
+}
+/* 
+button.animated-button.gibson-three {
+	border: 2px solid #65b37a;
+	color: #FFF;
+}
+button.animated-button.gibson-three:after {
+	opacity: 0;
+	background-image: -webkit-linear-gradient( transparent 50%, rgba(101,179,122,0.2) 50%);
+	background-image: -moz-linear-gradient(transparent 50%, rgba(101,179,122,0.2) 50%);
+	background-size: 10px 10px;
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(90deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(90deg);
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(90deg);
+	transform: translateX(-50%) translateY(-50%) rotate(90deg);
+}
+button.animated-button.gibson-three:hover:after {
+	height: 600% !important;
+	opacity: 1;
+	color: #FFF;
+} */

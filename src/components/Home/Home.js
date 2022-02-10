@@ -1,12 +1,11 @@
 import React from 'react';
-import useAuth from '../../hooks/useAuth';
+import HomeBanner from './HomeBanner/HomeBanner';
 
 const Home = () => {
-    const {signInWithGoogle, user}=useAuth();
 
     return (
         <div>
-            <h3>{user.email}</h3>
+            <HomeBanner></HomeBanner>
         </div>
     );
 };

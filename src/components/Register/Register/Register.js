@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import registerStyle from './Register.module.css'
 
 const Register = () => {
-
     //   const onSubmit = (data) => {
     //     handleUserRegister(data.email, data.password, data.userName, location, history);
     //     reset();
@@ -67,7 +66,6 @@ const Register = () => {
                         </Stack>
                     </Col>
                 </Row>
-
             </Container>
         </div>
     );
