@@ -1,0 +1,8 @@
+heading color: #ff595a
+heading-font: "Specter Black";
+
+second-heading color: #001233
+
+background-color: #001233;
+
+background: #efe0c9;
