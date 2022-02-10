@@ -52,7 +52,7 @@ const Navigation = () => {
                                     
                                 </div> :
                                     <Nav.Link>
-                                        <Link className="nav-link" to="/login"><button className="btn btn-info">Register</button></Link>
+                                        <Link className="nav-link" to="/register"><button className="btn btn-info">Register</button></Link>
                                     </Nav.Link>
                             }
                             </Nav.Link>
