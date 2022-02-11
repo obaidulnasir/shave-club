@@ -1,8 +1,7 @@
-import React from 'react';
 import myButtonStyle from "./MyButton.module.css"
 
 const MyButton = (props) => {
-    const { color, text } = props;
+    const {text,color } = props;
     return (
         <div>
             <button className={myButtonStyle.myButton} style={{backgroundColor:`${color}`}}> {text} </button>
