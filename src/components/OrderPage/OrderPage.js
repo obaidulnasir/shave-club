@@ -25,7 +25,7 @@ const OrderPage = () => {
     // order placed 
 
     const onSubmit = (data) => {
-        fetch("https://polar-gorge-22890.herokuapp.com/placeOrder", {
+        fetch("http://localhost:5000/placeOrder", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -46,7 +46,7 @@ const OrderPage = () => {
 
                         <HeadingText text={orderProduct.productName} size="25px"></HeadingText>
                     </Col>
-                    <Col className='border mx-1'>
+                    <Col className='border p-5 mx-1'>
                         <div>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-group">
