@@ -3,6 +3,8 @@ import './App.css';
 import AuthProvider from './components/AuthProvider/AuthProvider';
 import Dashboard from './components/Dashboard/Dashboard';
 import Home from './components/Home/Home';
+import Product from './components/Product/Product';
+import ProductDetails from './components/ProductDetails/ProductDetails';
 import Login from './components/Register/Login/Login';
 import PrivateRoute from './components/Register/PrivateRoute/PrivateRoute';
 import Register from './components/Register/Register/Register';
@@ -20,6 +22,12 @@ function App() {
       <Switch> 
         <Route path="/home">
           <Home></Home>
+        </Route>
+        <Route path="/product">
+          <Product></Product>
+        </Route>
+        <Route path="/singleProduct/:id">
+          <ProductDetails></ProductDetails>
         </Route>
         <PrivateRoute path="/shop">
           <Shop></Shop>

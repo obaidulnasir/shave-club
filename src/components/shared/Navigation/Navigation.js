@@ -21,7 +21,7 @@ const Navigation = () => {
                         <Nav>
                            
                             <Link to="/home" className="nav-link">Home</Link>
-                            <Link to="/products" className="nav-link">Products</Link>
+                            <Link to="/product" className="nav-link">Shop</Link>
                             <Link to="/about" className="nav-link">About</Link>
                             {
                                 user.email ? <div>
