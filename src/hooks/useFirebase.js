@@ -17,13 +17,13 @@ initializeAuthentication();
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading]= useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   const auth = getAuth();
 
   const provider = new GoogleAuthProvider();
 
-  //   google login
+  //   google signIn
   const signInWithGoogle = () => {
     setIsLoading(true);
     signInWithPopup(auth, provider)
@@ -35,7 +35,7 @@ const useFirebase = () => {
       .catch((error) => {
         setError(error.message);
       })
-      .finally(()=>setIsLoading(false));
+      .finally(() => setIsLoading(false));
   };
 
   //  logout
@@ -48,25 +48,32 @@ const useFirebase = () => {
       .catch((error) => {
         console.log(error);
       })
-      .finally(()=> setIsLoading(false));
+      .finally(() => setIsLoading(false));
   };
 
-  //   user registration
-  const handleUserRegister = (email, password) => {
+  //   user registration by email, pass
+  const handleUserRegister = (email, password, location, history) => {
     createUserWithEmailAndPassword(auth, email, password)
-      .then((result) => {
-        setUser(result.user);
-      })
-      .catch((error) => {
-        setError(error.message)
-      });
+    .then((result) => {
+      setUser(result.user);
+      alert(`Welcome to Shave Club!  your registration successful.`)
+      const destination = location.state.from||'/';
+      history.replace(destination);
+      // handleRegisterUserInfo(email, name);
+    })
+    .catch((error) => {
+      setError(error.message)
+      // alert(error);
+    });
   };
 
-  //   user email password login
-  const handleUserLogin = (email, password) => {
+  //   user login by email password
+  const handleUserLogin = (email, password, location, history) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
-          setUser(result.user)
+        setUser(result.user);
+        const destination = location.state.from||'/';
+      history.replace(destination);
         console.log(result.user);
       })
       .catch((error) => {
@@ -74,6 +81,8 @@ const useFirebase = () => {
         console.log(error.message);
       });
   };
+
+
   //   on auth stage change
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -85,7 +94,7 @@ const useFirebase = () => {
       }
       setIsLoading(false);
     });
-  }, []);
+  }, [user, auth]);
 
   return {
     isLoading,

@@ -1,25 +1,39 @@
 import React from 'react';
 import { Button, Col, Container, Form, Row, Stack } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import loginStyle from "./Login.module.css"
 
 const Login = () => {
-    const {signInWithGoogle} = useAuth();
+    const { signInWithGoogle, handleUserLogin } = useAuth();
     const location = useLocation();
     const history = useHistory();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+
+    const onSubmit = (data) => {
+        handleUserLogin(data.email, data.password, location, history);
+        console.log(data);
+    };
+
+
     return (
         <div>
-             <Container className='mt-5'>
+            <Container className='mt-5'>
                 <Row>
                     <Col >
                         <Stack gap={2} className={`${loginStyle.myLoginForm} col-md-5 mx-auto p-5`}>
                             <div>
-                                <Form>
+                                
+                                <Form onSubmit={handleSubmit(onSubmit)}>
                                     <h3 className='text-center mb-3'>Please Login</h3>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Email address</Form.Label>
-                                        <Form.Control type="email" placeholder="Enter email" />
+                                        <Form.Control {...register("email")} type="email" placeholder="Enter email" />
                                         {/* <Form.Text className="text-muted">
                                             We'll never share your email with anyone else.
                                         </Form.Text> */}
@@ -27,19 +41,13 @@ const Login = () => {
 
                                     <Form.Group className="mb-3">
                                         <Form.Label>Password</Form.Label>
-                                        <Form.Control type="password" placeholder="Password" />
+                                        <Form.Control {...register("password")} type="password" placeholder="Password" />
                                     </Form.Group>
                                     {/* <Form.Group className="mb-3">
                                         <Form.Check type="checkbox" label="Check me out" />
                                     </Form.Group> */}
-                                    {/* <Button variant="primary" type="submit">
-                                        Submit
-                                    </Button> */}
-                                    <div className="d-grid gap-2">
-                                        <Button variant="secondary" size="lg">
-                                            Login
-                                        </Button>
-                                    </div>
+                                    {errors.exampleRequired && <span>This field is required</span>}
+                                    <input className="mt-3 btn btn-dark btn-lg" type="submit" value="Login" />
                                 </Form>
                             </div>
                             <hr />
@@ -67,7 +75,7 @@ const Login = () => {
                 </Row>
 
             </Container>
-        {/* <Container className="my-5">
+            {/* <Container className="my-5">
             <Row>
                 <Col>
                     <div className="text-center">
@@ -77,7 +85,7 @@ const Login = () => {
                 </Col>
             </Row>
         </Container> */}
-    </div>
+        </div>
     );
 };
 

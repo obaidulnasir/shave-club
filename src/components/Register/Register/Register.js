@@ -1,14 +1,25 @@
 import React from 'react';
 import { Button, Col, Container, Form, Row, Stack } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { Link, useLocation, useHistory } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 import registerStyle from './Register.module.css'
 
 const Register = () => {
-    //   const onSubmit = (data) => {
-    //     handleUserRegister(data.email, data.password, data.userName, location, history);
-    //     reset();
-    //   };
+    const { signInWithGoogle, handleUserRegister } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+
+    const onSubmit = (data) => {
+        handleUserRegister(data.email, data.password, location, history);
+        console.log(data);
+    };
     return (
         <div>
             <Container className='mt-5'>
@@ -16,37 +27,26 @@ const Register = () => {
                     <Col >
                         <Stack gap={2} className={`${registerStyle.myRegisterForm} col-md-5 mx-auto p-5`}>
                             <div>
-                                <Form>
-                                    <h3 className='text-center mb-3'>Welcome to Shave Club</h3>
+                                <Form onSubmit={handleSubmit(onSubmit)}>
+                                    <h3 className='text-center mb-3'>Welcome to Shave Club. Please Register Your Account</h3>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Email address</Form.Label>
-                                        <Form.Control type="email" placeholder="Enter email" />
-                                        {/* <Form.Text className="text-muted">
-                                            We'll never share your email with anyone else.
-                                        </Form.Text> */}
+                                        <Form.Control {...register("email")} type="email" placeholder="Enter email" />
                                     </Form.Group>
 
                                     <Form.Group className="mb-3">
                                         <Form.Label>Password</Form.Label>
-                                        <Form.Control type="password" placeholder="Enter new password" />
+                                        <Form.Control {...register("password")} type="password" placeholder="Enter Your New Password" />
                                     </Form.Group>
-                                    {/* <Form.Group className="mb-3">
-                                        <Form.Check type="checkbox" label="Check me out" />
-                                    </Form.Group> */}
-                                    {/* <Button variant="primary" type="submit">
-                                        Submit
-                                    </Button> */}
-                                    <div className="d-grid gap-2">
-                                        <Button variant="secondary" size="lg">
-                                            Register
-                                        </Button>
-                                    </div>
+                                    {errors.exampleRequired && <span>This field is required</span>}
+                                    <input className="mt-3 btn btn-dark btn-lg" type="submit" value="Register" />
                                 </Form>
+
                             </div>
                             <hr />
                             <Row className='d-flex justify-content-between text-center'>
                                 <Col>
-                                    <Button variant="secondary">Google Sign In</Button>
+                                    <Button onClick={signInWithGoogle} variant="secondary">Google Sign In</Button>
                                     <div className='mt-2'>
                                         <Link to="/forgotPass text-dark">Forgot Pass</Link>
                                     </div>
