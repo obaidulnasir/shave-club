@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import Login from './components/Register/Login/Login';
 import PrivateRoute from './components/Register/PrivateRoute/PrivateRoute';
 import Register from './components/Register/Register/Register';
+import Footer from './components/shared/Footer/Footer';
 import Navigation from './components/shared/Navigation/Navigation';
 import Shop from './components/Shop/Shop';
 
@@ -32,6 +33,7 @@ function App() {
           <Home></Home>
         </Route>
       </Switch>
+      <Footer></Footer>
      </BrowserRouter>
      </AuthProvider>
     </div>
