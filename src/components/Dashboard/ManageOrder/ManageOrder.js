@@ -9,13 +9,13 @@ const ManageOrder = () => {
         fetch(`https://protected-lowlands-25877.herokuapp.com/allOrder`)
             .then(res => res.json())
             .then(data => setMyOrder(data));
-    }, [user?.email]);
+    }, [user?.email, myOrder]);
 
     //Delete order
     const handleDelete = (id) => {
         const toDelete = window.confirm('Are you sure to delete this order?')
         if (toDelete) {
-            fetch(`https://protected-lowlands-25877.herokuapp.com/${id}`, {
+            fetch(`https://protected-lowlands-25877.herokuapp.com/deleteOrder/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })

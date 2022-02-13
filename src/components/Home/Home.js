@@ -15,7 +15,8 @@ const Home = () => {
             <OurServices></OurServices>
             <SecondSection></SecondSection>
             <ThirdSection></ThirdSection>
-            <FourthSection></FourthSection> 
+            <FourthSection></FourthSection>
+            {/* <Review></Review>  */}
             <Testimonial></Testimonial> 
             <div style={{backgroundColor:"#001233"}}>
             <Container>

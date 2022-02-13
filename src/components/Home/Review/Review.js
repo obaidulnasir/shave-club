@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import testiStyle from "./Testimonial.module.css"
+import HeadingText from '../../shared/HeadingText/HeadingText';
 
-const Testimonial = () => {
+const Review = () => {
     const [review, setReview] = useState([]);
     useEffect(() => {
         fetch("https://protected-lowlands-25877.herokuapp.com/review")
@@ -10,18 +10,18 @@ const Testimonial = () => {
             .then((data) => setReview(data));
     }, []);
     return (
-        <div className='App'>
-            <div className={`${testiStyle.testimonialBg}`}>
-                <br /><br />
-                <Container>
-                <i style={{color:"#ff595a", fontSize:"75px"}} class="bi bi-chat-square-quote"></i>
-                <Row xs={1} md={3} className="g-4 mt-5">
+        <div className="App my-5">
+            <div>
+                <HeadingText text="Our Customer Says" size="25px"></HeadingText>
+            </div>
+            <Container>
+                <Row xs={1} md={3} className="g-4">
                     {review.map((rv) => (
                         <Col key={rv._insertId}>
                             <Card>
-                                <Card.Body className={`${testiStyle.feedbackSection} px-4 py-2 rounded`}>
+                                <Card.Body>
                                     <blockquote className="blockquote mb-0">
-                                        <p style={{color:"#001233", fontSize:"20px"}}>
+                                        <p>
                                             {" "}
                                             {rv.review}{" "}
                                         </p>
@@ -37,21 +37,8 @@ const Testimonial = () => {
                     ))}
                 </Row>
             </Container>
-                {/* <Container className='py-5'>
-                    <Row>
-                        <Col></Col>
-                        <Col className='text-center'>
-                        <i style={{color:"#ff595a", fontSize:"65px"}} class="bi bi-chat-square-quote"></i>
-                        <div className={`${testiStyle.feedbackSection} px-4 py-2 rounded`}>
-                            <p style={{color:"#001233", fontSize:"20px"}}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, incidunt.</p>
-                        </div>
-                        </Col>
-                        <Col></Col>
-                    </Row>
-                </Container> */}
-            </div>
         </div>
     );
 };
 
-export default Testimonial;
+export default Review;
