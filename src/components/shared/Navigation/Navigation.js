@@ -23,9 +23,9 @@ const Navigation = () => {
                             <Link to="/home" className="nav-link">Home</Link>
                             <Link to="/product" className="nav-link">Shop</Link>
                             <Link to="/about" className="nav-link">About</Link>
+                            <Link to="/dashboard" className="nav-link btn btn-info">Dashboard</Link>
                             {
                                 user.email ? <div>
-                                    <Link to="/dashboard" className="nav-link btn btn-info">Dashboard</Link>
                                     <button type="button" onClick={handleLogout} class="d-inline btn btn-outline-warning">Logout</button>
                                 </div> :
                                     <Link className="nav-link btn btn-info" to="/register">Register</Link>

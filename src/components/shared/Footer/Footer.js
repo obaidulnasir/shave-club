@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -10,21 +11,42 @@ const Footer = () => {
                     <Row className='d-flex justify-content-between'>
                         <Col>
                             <Row>
-                                <Col>1</Col>
-                                <Col>2</Col>
-                                <Col>3</Col>
+                                <Col>
+                                    <p>
+                                        <Link style={{ color: "#efe0c9" }} className='nav-link' to="/">Help Center</Link>
+                                    </p>
+                                    <p>
+                                        <Link style={{ color: "#efe0c9" }} className='nav-link' to="/">Privacy</Link>
+                                    </p>
+                                </Col>
+                                <Col></Col>
+                                <Col>
+                                    <p>
+                                        <Link style={{ color: "#efe0c9" }} className='nav-link' to="/">Contact Us</Link>
+                                    </p>
+                                    <p>
+                                        <Link style={{ color: "#efe0c9" }} className='nav-link' to="/">Terms</Link>
+                                    </p>
+                                </Col>
                             </Row>
                         </Col>
 
-                        <Col className='text-end'>
-                            <h5 style={{ color: "#efe0c9" }}>Bangladesh</h5>
-                            <p></p>
+                        <Col style={{ color: "#efe0c9" }} className='text-end'>
+                            <h5 >Bangladesh</h5>
+                            <br /><br />
+                            <div className="fs-3">
+                                <h5>Stay with us</h5>
+                                <i className="bi bi-twitter m-1"></i>
+                                <i className="bi bi-facebook m-1"></i>
+                                <i className="bi bi-instagram m-1"></i>
+                            </div>
+
                         </Col>
                     </Row>
                 </Container>
             </div>
             <div style={{ backgroundColor: "#efe0c9" }}>
-                <h6 className='text-center'>Just completed footer</h6>
+                <h6 className='text-center'>&copy; All Rights Reserved by SHAVE Store</h6>
             </div>
 
         </div>
