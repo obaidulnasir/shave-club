@@ -17,7 +17,7 @@ const OrderPage = () => {
       } = useForm();
 
     useEffect(() => {
-        fetch(`https://protected-lowlands-25877.herokuapp.com/${id}`)
+        fetch(`https://protected-lowlands-25877.herokuapp.com/orderPage/${id}`)
             .then(res => res.json())
             .then(data => setOrderProduct(data));
     }, [id]);
