@@ -60,6 +60,41 @@ const AddProduct = () => {
                     />
                   </div>
                   <div className="form-group">
+                    <label>Extra Image 1</label>
+                    <input 
+                      type="text"
+                      className="form-control"
+                      placeholder="image bb link"
+                      {...register("extImg1", {required:true})}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Extra Image 2</label>
+                    <input 
+                      type="text"
+                      className="form-control"
+                      placeholder="image bb link"
+                      {...register("extImg2", {required:true})}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Catagories</label>
+                    <input 
+                      type="text"
+                      className="form-control"
+                      placeholder="Catagories"
+                      {...register("catagories", {required:true})}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <p>Uses Tips</p>
+                    <textarea 
+                      class="form-control"
+                      rows="3"
+                      {...register("tips", {required:true})}
+                    ></textarea>
+                  </div>
+                  <div className="form-group">
                     <p>Description</p>
                     <textarea 
                       class="form-control"

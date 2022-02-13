@@ -15,12 +15,12 @@ const Product = () => {
             <div className='text-center'>
                 <HeadingText text="Shop"></HeadingText>
             </div>
-            <Container>
+            <Container className='my-5'>
                 <Row>
-                    <Col className='col-md-3'>
+                    {/* <Col className='col-md-3'>
                         this is 3
-                    </Col>
-                    <Col className='col-md-9'>
+                    </Col> */}
+                    <Col>
                         <Row xs={1} md={3} className="g-4">
                             {allProduct.map(pd => (
                                 <Col key={pd._id}>
@@ -33,12 +33,12 @@ const Product = () => {
                                                 Price: {pd.price} $
                                             </Card.Text>
                                             <Card.Text>
-                                                {pd.description.slice(0, 255)}
+                                                <i class="bi bi-star fs-6">0 (5)</i>
                                             </Card.Text>
                                         </Card.Body>
                                         <div className="text-center">
                                             <Link to={`/singleProduct/${pd._id}`}>
-                                                View
+                                                <button className='btn btn-info'>See Details</button>
                                             </Link>
                                         </div>
                                     </Card>
@@ -46,7 +46,6 @@ const Product = () => {
                             ))}
                         </Row>
                     </Col>
-
                 </Row>
             </Container>
         </div>
