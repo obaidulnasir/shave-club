@@ -9,7 +9,7 @@ const MyOrder = () => {
         fetch(`https://protected-lowlands-25877.herokuapp.com/${user?.email}`)
             .then(res => res.json())
             .then(data => setMyOrder(data));
-    }, [user?.email]);
+    }, [myOrder, user.email]);
 
     //Delete order
     const handleDelete = (id) => {

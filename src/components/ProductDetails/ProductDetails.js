@@ -8,7 +8,7 @@ const ProductDetails = () => {
     const { id } = useParams()
     const [singleProduct, setSingleProduct] = useState({});
     useEffect(() => {
-        fetch(`https://protected-lowlands-25877.herokuapp.com/${id}`)
+        fetch(`https://protected-lowlands-25877.herokuapp.com/singleProduct/${id}`)
             .then(res => res.json())
             .then(data => setSingleProduct(data));
     }, [id])
