@@ -83,6 +83,16 @@ const OrderPage = () => {
                                     />
                                 </div>
                                 <div className="form-group">
+                                    <label>Price</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        defaultValue={orderProduct?.price}
+                                        placeholder=""
+                                        {...register("price", { required: true })}
+                                    />
+                                </div>
+                                <div className="form-group">
                                     <label>Date</label>
                                     <input
                                         type="text"

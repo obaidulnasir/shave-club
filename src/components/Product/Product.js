@@ -6,7 +6,7 @@ import HeadingText from '../shared/HeadingText/HeadingText';
 const Product = () => {
     const [allProduct, setAllProduct] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allProduct')
+        fetch('https://protected-lowlands-25877.herokuapp.com/allProduct')
             .then(res => res.json())
             .then(data => setAllProduct(data));
     }, [])

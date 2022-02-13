@@ -3,6 +3,7 @@ import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import useAuth from '../../hooks/useAuth';
 import MyOrder from './MyOrder/MyOrder';
 import AddProduct from './AddProduct/AddProduct';
+import ManageOrder from './ManageOrder/ManageOrder';
 
 
 
@@ -25,6 +26,9 @@ const Dashboard = () => {
                         <Link to={`${url}/addProduct`}>
                             <button className="btn btn-primary mx-1" type="button">Add Product</button>
                         </Link>
+                        <Link to={`${url}/manageOrders`}>
+                            <button className="btn btn-primary mx-1" type="button">Manage Order</button>
+                        </Link>
                     </div>
                 </div>
                 <hr />
@@ -35,6 +39,9 @@ const Dashboard = () => {
                         </Route>
                         <Route exact path={`${path}/addProduct`}>
                             <AddProduct></AddProduct>
+                        </Route>
+                        <Route exact path={`${path}/manageOrders`}>
+                            <ManageOrder></ManageOrder>
                         </Route>
                     </Switch>
                 </div>
