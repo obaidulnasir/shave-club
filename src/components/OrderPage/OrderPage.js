@@ -17,7 +17,7 @@ const OrderPage = () => {
       } = useForm();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleProduct/${id}`)
+        fetch(`https://protected-lowlands-25877.herokuapp.com/${id}`)
             .then(res => res.json())
             .then(data => setOrderProduct(data));
     }, [id]);
@@ -25,7 +25,7 @@ const OrderPage = () => {
     // order placed 
 
     const onSubmit = (data) => {
-        fetch("http://localhost:5000/placeOrder", {
+        fetch("https://protected-lowlands-25877.herokuapp.com/placeOrder", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

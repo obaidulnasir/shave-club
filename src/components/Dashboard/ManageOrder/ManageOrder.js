@@ -6,7 +6,7 @@ const ManageOrder = () => {
     const [myOrder, setMyOrder] = useState([]);
     const {user} = useAuth();
     useEffect(() => {
-        fetch(`http://localhost:5000/allOrder`)
+        fetch(`https://protected-lowlands-25877.herokuapp.com/allOrder`)
             .then(res => res.json())
             .then(data => setMyOrder(data));
     }, [user?.email]);
@@ -15,7 +15,7 @@ const ManageOrder = () => {
     const handleDelete = (id) => {
         const toDelete = window.confirm('Are you sure to delete this order?')
         if (toDelete) {
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            fetch(`https://protected-lowlands-25877.herokuapp.com/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })
