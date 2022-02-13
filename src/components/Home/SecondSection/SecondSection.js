@@ -24,7 +24,7 @@ const SecondSection = () => {
                         <Col>
                             <HeadingText size="35px" text="JOIN THE MILLIONS ALREADY IN THE CLUB."></HeadingText>
                             <p style={{color:"#001233"}}>* No Subscription Required </p>
-                            <MyButton text="Sell For 5$"></MyButton>
+                            <MyButton color="#ff595a" text="Sell For 5$"></MyButton>
                         </Col>
                         <Col>
                             

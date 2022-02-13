@@ -15,7 +15,7 @@ const Testimonial = () => {
                 <br /><br />
                 <Container>
                 <i style={{color:"#ff595a", fontSize:"75px"}} class="bi bi-chat-square-quote"></i>
-                <Row xs={1} md={3} className="g-4 mt-5">
+                <Row xs={1} md={3} className="g-4 mt-2">
                     {review.map((rv) => (
                         <Col key={rv._insertId}>
                             <Card>

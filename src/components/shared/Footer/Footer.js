@@ -7,7 +7,7 @@ const Footer = () => {
         <div>
 
             <div className='py-5' style={{ backgroundColor: "#001233" }}>
-                <Container className='my-5'>
+                <Container className='mt-5'>
                     <Row className='d-flex justify-content-between'>
                         <Col>
                             <Row>
