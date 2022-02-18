@@ -60,8 +60,6 @@ const MyOrder = () => {
                                             className="btn bg-danger p-2"
                                         >Delete
                                         </button></td>
-                                        {/* modal */}
-
                                     </tr>
                                 </tbody>
                             ))}

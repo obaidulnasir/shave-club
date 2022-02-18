@@ -40,7 +40,6 @@ const Footer = () => {
                                 <i className="bi bi-facebook m-1"></i>
                                 <i className="bi bi-instagram m-1"></i>
                             </div>
-
                         </Col>
                     </Row>
                 </Container>

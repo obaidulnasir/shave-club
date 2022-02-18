@@ -17,7 +17,6 @@ const SecondSection = () => {
                     </Col>
                 </Row>
             </Container>
-            {/* banner section  */}
             <div className={`${bannerTwoStyle.bannerImages} d-flex justify-content-center align-items-center`} style={{ backgroundImage: `url(${bannerTwo})` }}>
                 <Container>
                     <Row >
